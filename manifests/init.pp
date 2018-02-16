@@ -15,13 +15,14 @@ class bitbucket(
   $umask        = undef,
 
   # Bitbucket Settings
-  $version      = '4.6.0',
-  $product      = 'bitbucket',
-  $format       = 'tar.gz',
-  $installdir   = '/opt/bitbucket',
-  $homedir      = '/home/bitbucket',
-  $context_path = '',
-  $tomcat_port  = 7990,
+  $version        = '4.6.0',
+  $product        = 'bitbucket',
+  $format         = 'tar.gz',
+  $installdir     = '/opt/bitbucket',
+  $homedir        = '/home/bitbucket',
+  $context_path   = '',
+  $tomcat_port    = 7990,
+  $redirect_port  = 8443,
 
   # User and Group Management Settings
   $manage_usr_grp = true,

@@ -3,12 +3,13 @@
 # This configures the bitbucket module. See README.md for details
 #
 class bitbucket::config(
-  $version      = $bitbucket::version,
-  $user         = $bitbucket::user,
-  $group        = $bitbucket::group,
-  $proxy        = $bitbucket::proxy,
-  $context_path = $bitbucket::context_path,
-  $tomcat_port  = $bitbucket::tomcat_port,
+  $version        = $bitbucket::version,
+  $user           = $bitbucket::user,
+  $group          = $bitbucket::group,
+  $proxy          = $bitbucket::proxy,
+  $context_path   = $bitbucket::context_path,
+  $tomcat_port    = $bitbucket::tomcat_port,
+  $redirect_port  = $bitbucket::redirect_port,
   $config_properties = $bitbucket::config_properties,
 ) {
 

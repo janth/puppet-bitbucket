@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# NOTE: File manageed by puppet: templates/setenv.sh.erb
 #
 # One way to set the BITBUCKET HOME path is here via this variable.  Simply uncomment it and set a valid path like
 # /bitbucket/home.  You can of course set it outside in the command terminal; that will also work.
@@ -339,3 +340,5 @@ if [ -z "$CATALINA_PID" ] ; then
     fi
 fi
 export CATALINA_PID
+
+env | sort | grep -E "^(JVM|JAVA|CATALINA|BITBUCKET|STASH)" > /tmp/bitbucket-setenv.env
