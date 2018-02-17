@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# NOTE: File manageed by puppet: templates/setenv.sh.erb
+
+# NOTE: File managed by puppet: templates/setenv.sh.erb
+
 #
 # One way to set the BITBUCKET HOME path is here via this variable.  Simply uncomment it and set a valid path like
 # /bitbucket/home.  You can of course set it outside in the command terminal; that will also work.
@@ -317,7 +319,7 @@ if [ "x$JVM_LIBRARY_PATH" != "x" ]; then
     JVM_REQUIRED_ARGS="${JVM_REQUIRED_ARGS} ${JVM_LIBRARY_PATH_MINUSD}"
 fi
 
-JAVA_OPTS="-Xms${JVM_MINIMUM_MEMORY} -Xmx${JVM_MAXIMUM_MEMORY} ${JAVA_OPTS} ${JVM_REQUIRED_ARGS} ${JVM_SUPPORT_RECOMMENDED_ARGS} ${BITBUCKET_HOME_MINUSD}"
+export JAVA_OPTS="-Xms${JVM_MINIMUM_MEMORY} -Xmx${JVM_MAXIMUM_MEMORY} ${JAVA_OPTS} ${JVM_REQUIRED_ARGS} ${JVM_SUPPORT_RECOMMENDED_ARGS} ${BITBUCKET_HOME_MINUSD}"
 
 # PermGen size needs to be increased if encountering OutOfMemoryError: PermGen problems.
 BITBUCKET_MAX_PERM_SIZE=<%= scope.lookupvar('bitbucket::jvm_permgen') %>

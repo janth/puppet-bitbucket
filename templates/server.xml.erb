@@ -1,5 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!-- NOTE: File manageed by puppet: templates/server.xml.erb -->
+
+<!-- NOTE: File managed by puppet: templates/server.xml.erb -->
+
 <!--
   Licensed to the Apache Software Foundation (ASF) under one or more
   contributor license agreements.  See the NOTICE file distributed with
@@ -34,7 +36,7 @@
         <Connector port="<%= @tomcat_port %>" protocol="HTTP/1.1"
                    connectionTimeout="20000"
                    useBodyEncodingForURI="true"
-                   redirectPort="<%= @remote_port %>"
+                   redirectPort="<%= @redirect_port %>"
                    compression="on"
                    compressableMimeType="text/html,text/xml,text/plain,text/css,application/json,application/javascript,application/x-javascript"
 <% if @proxy -%>

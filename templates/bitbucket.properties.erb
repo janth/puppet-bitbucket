@@ -1,3 +1,4 @@
+# NOTE: File managed by puppet: templates/bitbucket.properties.erb
 <% if scope.function_versioncmp([scope['bitbucket::version'], '3.8.0']) >= 0 -%>
 setup.displayName=<%= scope['bitbucket::display_name'] %>
 setup.baseUrl=<%= scope['bitbucket::base_url'] %>
@@ -21,5 +22,8 @@ setup.sysadmin.emailAddress=<%= scope['bitbucket::sysadmin_email'] %>
 <%- @proxy.sort.each do |key,value| -%>
 <%= key %>=<%= value %>
 <%- end -%>
+<%- end -%>
+<%- if @sso -%>
+# Add sso here...
 <%- end -%>
 <% end -%>
