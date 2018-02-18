@@ -18,12 +18,4 @@ setup.sysadmin.emailAddress=<%= scope['bitbucket::sysadmin_email'] %>
 <% if scope.function_versioncmp([scope['bitbucket::version'], '5.0.0']) >= 0 -%>
 <% if scope.lookupvar('bitbucket::tomcat_port') %>server.port=<%= scope.lookupvar('bitbucket::tomcat_port') %><% end %>
 <% if scope.lookupvar('bitbucket::context_path') %>server.context-path=<%= scope.lookupvar('bitbucket::context_path') %><% end %>
-<%- if @proxy -%>
-<%- @proxy.sort.each do |key,value| -%>
-<%= key %>=<%= value %>
-<%- end -%>
-<%- end -%>
-<%- if @sso -%>
-# Add sso here...
-<%- end -%>
 <% end -%>
